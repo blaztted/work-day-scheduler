@@ -1,7 +1,15 @@
+:root {
+  --lightblue: #78c4f7;
+  --darkblue: #118cdf;
+  --light: rgb(248, 248, 248);
+  --dark: rgb(36, 36, 36);
+  --white: white;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  font-family: "Quicksand", sans-serif;
 }
 
 textarea {
@@ -22,7 +30,19 @@ header {
   padding: 60px;
 }
 
-.description {
+h1 {
+  color: var(--light);
+}
+
+.card-body {
+  background-color: var(--dark);
+}
+
+.card-body p {
+  color: var(--white);
+}
+
+h1 .description {
   white-space: pre-wrap;
 }
 
