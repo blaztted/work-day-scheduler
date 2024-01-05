@@ -1,12 +1,16 @@
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-</style>;
-
-// The app should:
-console.log("ding");
-
 // Display the current day at the top of the calender when a user opens the planner.
+// var advancedFormat = require("dayjs/plugin/advancedFormat");
+// dayjs.extend(advancedFormat);
+// dayjs().format("Q Do k kk X x");
+
+var currentDate = dayjs().format("dddd, MMMM D, YYYY");
+// Display the current day in the element with the id 'currentDay'
+$("#currentDay").text(currentDate);
+console.log(currentDate);
+
+// Add the rest of your code below this point
+// ...
+
 // create dayjs property to show the date at the top
 // center the h1 and p
 
