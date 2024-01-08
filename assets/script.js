@@ -41,7 +41,7 @@ function displayCalendar(today, calEvents) {
 
     row.append($("<div>").addClass("col-2 hour").text(hourRow.format("h A")));
 
-    //event text
+    //add block event text
     let blockEvent = hourRow.format("hA");
     row.append(
       $("<textarea>").addClass(`col-8 ${color}`).text(calEvents[blockEvent])
@@ -66,7 +66,26 @@ function startCalendar() {
   displayCalendar(today, calEvents);
 }
 
+function storeEvents() {
+  localStorage.setItem("calEvents", JSON.stringify(calEvents));
+}
+
+function loadEvents() {
+  const stored = JSON.parse(localStorage.getItem("calEvents"));
+  if (stored) {
+    calEvents = stored;
+  }
+}
+
+//save button click event
+$(document).on("click", "button.saveBtn", (e) => {
+  let calText = $(e.currentTarget).closest(".row").find("textarea").val();
+  calEvents[e.currentTarget.id] = calText; //add text to object with time as key
+  storeEvents();
+});
+
 startCalendar();
+loadEvents();
 // Present time blocks for standard business hours when the user scrolls down.
 //new div with 9-5 individual blocks
 
