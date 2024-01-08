@@ -1,15 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
 :root {
-  --lightblue: #78c4f7;
-  --darkblue: #118cdf;
-  --light: rgb(248, 248, 248);
-  --dark: rgb(36, 36, 36);
-  --white: white;
+  --light: #ffffff;
+  --lightgreen: #e3f6f5;
+  --lightgreen2: #bae8e8;
+  --dark: #272343;
 }
 
 body {
   font-size: 16px;
   line-height: 1;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 textarea {
@@ -28,10 +29,11 @@ header {
   border-radius: 0;
   border-bottom: 10px solid black;
   padding: 60px;
+  background-color: var(--lightgreen2);
 }
 
 h1 {
-  color: var(--light);
+  color: var(--lightgreen);
 }
 
 .card-body {
@@ -39,7 +41,7 @@ h1 {
 }
 
 .card-body p {
-  color: var(--white);
+  color: var(--lightgreen2);
 }
 
 h1 .description {
