@@ -6,6 +6,7 @@
 //! Display the current day in the element with the id 'currentDay'
 // !create dayjs property to show the date at the top
 // !center the h1 and p
+
 var currentDate = dayjs().format("dddd, MMMM D, YYYY");
 
 //store calendar events
@@ -23,7 +24,8 @@ function displayCalendar(today, calEvents) {
   const cal = $("div.container");
   cal.empty();
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 9; i++) {
+    // Change the loop condition to iterate 8 times for 9 AM to 5 PM
     const row = $("<div>").addClass("row"); // create row for each hour
 
     let color = "";
@@ -37,31 +39,34 @@ function displayCalendar(today, calEvents) {
 
     cal.append(row);
 
-    row.append($("<div").addClass("col-2 hour").text(hourRow.format("h A")));
+    row.append($("<div>").addClass("col-2 hour").text(hourRow.format("h A")));
 
     //event text
-
     let blockEvent = hourRow.format("hA");
     row.append(
       $("<textarea>").addClass(`col-8 ${color}`).text(calEvents[blockEvent])
     );
 
     //save btn
-
     row.append(
       $("<button>")
         .addClass("col-2 saveBtn")
         .html("<i class='far fa-save'></i>")
-        .attr("aria-label", "Save")
+
         .attr("id", hourRow.format("hA"))
     );
 
-    hourRow.add(1, "hour");
-
-    hourDisplay = dayjs();
+    hourRow = hourRow.add(1, "hour");
   }
 }
 
+function startCalendar() {
+  const today = dayjs();
+
+  displayCalendar(today, calEvents);
+}
+
+startCalendar();
 // Present time blocks for standard business hours when the user scrolls down.
 //new div with 9-5 individual blocks
 
