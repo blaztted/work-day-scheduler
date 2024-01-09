@@ -84,6 +84,16 @@ function loadEvents() {
   }
 }
 
+// function to check current time every minute and change color blocks if needed
+function checkTime() {
+  const checkHour = setInterval(function () {
+    if (dayjs().isAfter(hourDisplay, "minute")) {
+      console.log("UPDATING...");
+      startCalendar();
+    }
+  }, 60000);
+}
+
 //save button click event
 $(document).on("click", "button.saveBtn", (e) => {
   let calText = $(e.currentTarget).closest(".row").find("textarea").val();
@@ -101,20 +111,4 @@ $(document).on("click", "button.clearAllBtn", () => {
 
 startCalendar();
 loadEvents();
-
-// Allow a user to enter an event when they click a time block
-//at the end of each block, you can click an icon to save what was written on the block
-
-//use json.stringify to store and json.parse to retreieve from local storage after page refresh
-// Save the event in local storage when the save button is clicked in that time block.
-
-// Persist events between refreshes of a page
-
-// function to save to local storage when button is clicked
-// get the values
-// store them
-// function to update classes hours change
-// get current time
-// comptare against those in your time blocks
-// update the classes
-// remember to also get values from local storage and set them on page load
+checkTime();
