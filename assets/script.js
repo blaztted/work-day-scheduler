@@ -91,6 +91,14 @@ $(document).on("click", "button.saveBtn", (e) => {
   storeEvents();
 });
 
+//Clear all button
+
+$(document).on("click", "button.clearAllBtn", () => {
+  $("textarea").val("");
+  calEvents = {}; // Clear the Events object
+  storeEvents(); // update localStorage
+});
+
 startCalendar();
 loadEvents();
 

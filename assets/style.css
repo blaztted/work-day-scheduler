@@ -41,7 +41,7 @@ h1 {
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .card-body {
@@ -106,4 +106,15 @@ h1 .description {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  padding-right: 100px;
+  margin-top: 10px;
+}
+
+.clearAllBtn {
+  width: 200px;
 }
