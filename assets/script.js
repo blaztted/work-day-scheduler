@@ -21,7 +21,6 @@ let hourDisplay = dayjs();
 
 //Display current day
 $("#currentDay").text(currentDate);
-console.log(currentDate);
 
 function displayCalendar(today, calEvents) {
   let hourRow = dayjs(today).hour(9);
@@ -72,7 +71,6 @@ function startCalendar() {
 
 function storeEvents() {
   localStorage.setItem("calEvents", JSON.stringify(calEvents));
-  console.log(calEvents);
 }
 
 function loadEvents() {

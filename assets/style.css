@@ -3,7 +3,8 @@
 :root {
   --light: #ffffff;
   --lightgreen: #e3f6f5;
-  --lightgreen2: #bae8e8;
+  --lightblue: #06aed5;
+  --grey: rgb(211, 211, 211);
   --dark: #272343;
 }
 
@@ -17,6 +18,8 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
+  border-top: 2px solid var(--dark);
+
   color: black !important;
   font-weight: bold;
   border-left: 1px solid black;
@@ -30,19 +33,25 @@ header {
   border-radius: 0;
   border-bottom: 10px solid black;
   padding: 60px;
-  background-color: var(--lightgreen2);
+  background-color: var(--lightblue);
 }
 
 h1 {
-  color: var(--lightgreen);
+  color: var(--dark);
+}
+
+.container {
+  margin-top: 50px;
 }
 
 .card-body {
-  background-color: var(--dark);
+  background-color: var(--light);
+  border-width: 2px !important;
 }
 
 .card-body p {
-  color: var(--lightgreen2);
+  font-size: 15px;
+  color: var(--dark);
 }
 
 h1 .description {
@@ -64,6 +73,11 @@ h1 .description {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #06aed5;
 }
 
 .past {
